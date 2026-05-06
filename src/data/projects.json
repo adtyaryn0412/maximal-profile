@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "title": "Kanopi Minimalis Modern",
+        "category": "Kanopi",
+        "image": "/images/galery/projects1/1.jpg",
+        "description": "Pemasangan kanopi baja ringan dengan atap galvalum peredam panas. Desain minimalis tanpa tiang tengah untuk memaksimalkan ruang gerak kendaraan. Menggunakan cat finishing warna hitam doff yang elegan dan tahan cuaca.",
+        "location": "Solo, Jawa Tengah",
+        "year": "2023",
+        "gallery": [
+            "/images/galery/projects1/1.jpg",
+            "/images/galery/projects1/2.jpg",
+            "/images/galery/projects1/3.jpg",
+            "/images/galery/projects1/4.jpg"
+        ]
+    },
+    {
+        "id": "2",
+        "title": "Pagar Laser Cutting",
+        "category": "Pagar",
+        "image": "/images/hero-bg.jpg",
+        "description": "Pagar besi dengan motif laser cutting presisi motif batik parang. Menggunakan bahan plat besi ketebalan 2mm dan frame hollow galvanis 4x6. Finishing cat duco anti karat.",
+        "location": "Sukoharjo, Jawa Tengah",
+        "year": "2024",
+        "gallery": [
+            "/images/hero-bg.jpg",
+            "/images/hero-bg.jpg"
+        ]
+    }
+]

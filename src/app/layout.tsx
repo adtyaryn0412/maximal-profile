@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Maximal Construction | Solusi Bangunan Profesional",
@@ -16,10 +17,10 @@ export default function RootLayout({
     <html lang="id">
       <body>
         <Navbar />
-        {/* Ubah pt-20 menjadi pt-14 agar pas dengan tinggi navbar baru */}
-        <main className="pt-14">
+        <main className="pt-14 min-h-screen">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

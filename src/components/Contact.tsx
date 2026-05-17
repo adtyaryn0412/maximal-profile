@@ -8,7 +8,7 @@ export default function Contact() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Header */}
-                <div className="text-center max-w-3xl mx-auto mb-16">
+                <div data-aos="fade-up" className="text-center max-w-3xl mx-auto mb-16">
                     <span className="text-red-600 font-bold tracking-widest uppercase text-sm mb-2 block">
                         Temukan Kami
                     </span>
@@ -24,7 +24,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
 
                     {/* Google Maps embed */}
-                    <div className="lg:col-span-3 rounded-2xl overflow-hidden border border-slate-100 shadow-sm h-[420px] bg-slate-100">
+                    <div data-aos="fade-right" className="lg:col-span-3 rounded-2xl overflow-hidden border border-slate-100 shadow-sm h-[420px] bg-slate-100">
                         <iframe
                             title="Lokasi Maximal Construction"
                             src="https://maps.google.com/maps?q=-7.567764,110.87844&z=17&output=embed"
@@ -44,6 +44,8 @@ export default function Contact() {
                             href="https://maps.app.goo.gl/Y5K1becofmKieaKp7"
                             target="_blank"
                             rel="noopener noreferrer"
+                            data-aos="fade-left"
+                            data-aos-delay="0"
                             className="flex items-start gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-red-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
                         >
                             <div className="flex-shrink-0 w-10 h-10 bg-white border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 group-hover:bg-red-600 group-hover:border-red-600 group-hover:text-white transition-all duration-300 shadow-sm">
@@ -64,6 +66,8 @@ export default function Contact() {
                             href="https://wa.me/6281325255005"
                             target="_blank"
                             rel="noopener noreferrer"
+                            data-aos="fade-left"
+                            data-aos-delay="100"
                             className="flex items-start gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-red-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
                         >
                             <div className="flex-shrink-0 w-10 h-10 bg-white border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 group-hover:bg-red-600 group-hover:border-red-600 group-hover:text-white transition-all duration-300 shadow-sm">
@@ -81,6 +85,8 @@ export default function Contact() {
                         {/* Email */}
                         <a
                             href="mailto:maximal.construction@gmail.com"
+                            data-aos="fade-left"
+                            data-aos-delay="200"
                             className="flex items-start gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-red-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
                         >
                             <div className="flex-shrink-0 w-10 h-10 bg-white border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 group-hover:bg-red-600 group-hover:border-red-600 group-hover:text-white transition-all duration-300 shadow-sm">
@@ -100,6 +106,8 @@ export default function Contact() {
                             href="https://wa.me/6281325255005?text=Halo%20Maximal%2C%20saya%20ingin%20jadwalkan%20survei%20gratis."
                             target="_blank"
                             rel="noopener noreferrer"
+                            data-aos="zoom-in"
+                            data-aos-delay="300"
                             className="flex items-center justify-center gap-2 w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-red-500/30 hover:-translate-y-1 text-sm"
                         >
                             Jadwalkan Survei Gratis

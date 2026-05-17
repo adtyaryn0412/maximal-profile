@@ -69,7 +69,7 @@ export default async function ProjectDetail({ params }: Props) {
                 )}
                 {/* Menambahkan pb-20 agar teks agak ke atas dan tidak tertabrak card yang naik (-mt-20) */}
                 <div className="absolute inset-0 flex items-center justify-center pb-20 md:pb-24">
-                    <div className="text-center px-4 animate-fade-in-up">
+                    <div data-aos="zoom-in" className="text-center px-4">
                         <span className="inline-block px-3 py-1 bg-red-600 text-white text-xs font-bold tracking-widest uppercase rounded mb-4">
                             {project.category}
                         </span>
@@ -83,12 +83,12 @@ export default async function ProjectDetail({ params }: Props) {
 
             {/* Kontainer Card Detail - Naik ke atas dengan -mt-20 */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 md:-mt-32 relative z-10">
-                <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-10 lg:p-12 border border-neutral-100">
+                <div data-aos="fade-up" data-aos-delay="200" className="bg-white rounded-3xl shadow-2xl p-6 md:p-10 lg:p-12 border border-neutral-100">
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
                         <div className="md:col-span-2 space-y-8">
-                            <div>
+                            <div data-aos="fade-right" data-aos-delay="300">
                                 <h2 className="text-2xl font-bold text-neutral-900 border-b-2 border-red-600 inline-block pb-2 mb-6">
                                     Tentang Proyek
                                 </h2>
@@ -103,7 +103,7 @@ export default async function ProjectDetail({ params }: Props) {
                         </div>
 
                         <div className="space-y-8">
-                            <div className="bg-neutral-50 p-8 rounded-2xl border border-neutral-200">
+                            <div data-aos="fade-left" data-aos-delay="400" className="bg-neutral-50 p-8 rounded-2xl border border-neutral-200">
                                 <h3 className="text-lg font-bold text-neutral-900 mb-6 flex items-center gap-2">
                                     <span className="w-1 h-6 bg-red-600 rounded-full"></span>
                                     Informasi Proyek
@@ -132,7 +132,7 @@ export default async function ProjectDetail({ params }: Props) {
                                 </ul>
                             </div>
 
-                            <div className="flex flex-col gap-4 sticky top-24">
+                            <div data-aos="zoom-in" data-aos-delay="500" className="flex flex-col gap-4 sticky top-24">
                                 <p className="text-sm text-center text-neutral-500">Tertarik membuat proyek seperti ini?</p>
                                 <Link
                                     href={`https://wa.me/6281325255005?text=Halo%20Maximal%2C%20saya%20tertarik%20membuat%20${project.category}%20seperti%20proyek%20${project.title}`}

@@ -15,19 +15,31 @@ const Hero = () => {
 
             <div className="relative z-10 max-w-5xl mx-auto px-4 text-center text-white mt-[-2rem]">
 
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 tracking-tight drop-shadow-md">
+                <h1 
+                    data-aos="fade-up" 
+                    className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 tracking-tight drop-shadow-md"
+                >
                     Maximal <span className="text-red-600">Construction</span>
                 </h1>
 
-                <h2 className="text-2xl md:text-4xl font-bold mb-8 text-white/90">
+                <h2 
+                    data-aos="fade-up" data-aos-delay="100"
+                    className="text-2xl md:text-4xl font-bold mb-8 text-white/90"
+                >
                     Solusi Bangunan Profesional
                 </h2>
 
-                <p className="text-base md:text-xl text-slate-200 mb-12 leading-relaxed max-w-3xl mx-auto font-medium drop-shadow-sm">
+                <p 
+                    data-aos="fade-up" data-aos-delay="200"
+                    className="text-base md:text-xl text-slate-200 mb-12 leading-relaxed max-w-3xl mx-auto font-medium drop-shadow-sm"
+                >
                     Melayani pembuatan Kanopi, Pagar, Rumah, hingga Pemborong di wilayah Solo & Sekitarnya dengan hasil berkualitas tinggi.
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div 
+                    data-aos="fade-up" data-aos-delay="300"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                >
                     <Link
                         href="https://wa.me/6281325255005?text=Halo%20Maximal,%20saya%20tertarik%20dengan%20jasa%20anda."
                         target="_blank"

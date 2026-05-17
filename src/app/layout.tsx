@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+import AosInit from "@/components/AosInit";
+
 export const metadata: Metadata = {
   title: "Maximal Construction | Solusi Bangunan Profesional",
   description: "Jasa konstruksi, renovasi, dan aksesoris rumah di Solo & Grobogan",
@@ -16,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body>
+        <AosInit />
         <Navbar />
         <main className="pt-14 min-h-screen">
           {children}

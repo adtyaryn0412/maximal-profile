@@ -54,7 +54,7 @@ export default function Testimonials() {
     return (
         <section id="testimoni" className="py-24 bg-slate-50 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-16">
+                <div data-aos="fade-up" className="text-center max-w-3xl mx-auto mb-16">
                     <span className="text-red-600 font-bold tracking-widest uppercase text-sm mb-2 block">
                         Ulasan Pelanggan
                     </span>
@@ -74,9 +74,11 @@ export default function Testimonials() {
                     </div>
                 ) : testimonials.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {testimonials.map((testimonial) => (
+                        {testimonials.map((testimonial, i) => (
                             <div
                                 key={testimonial.id}
+                                data-aos="fade-up"
+                                data-aos-delay={(i % 3) * 100}
                                 className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group"
                             >
                                 {/* Quote Icon */}

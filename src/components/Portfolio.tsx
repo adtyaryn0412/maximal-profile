@@ -64,7 +64,7 @@ export default function Portfolio() {
         <section id="portofolio" className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="text-center mb-16">
+                <div data-aos="fade-up" className="text-center mb-16">
                     <span className="text-red-600 font-bold tracking-widest uppercase text-sm mb-2 block">
                         Hasil Karya Kami
                     </span>
@@ -96,9 +96,11 @@ export default function Portfolio() {
                 ) : (
                     <>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {displayedProjects.map((project) => (
+                            {displayedProjects.map((project, i) => (
                                 <div
                                     key={project.id}
+                                    data-aos="fade-up"
+                                    data-aos-delay={(i % 6) * 100}
                                     className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
                                 >
                                     <div className="relative h-64 overflow-hidden bg-slate-100">

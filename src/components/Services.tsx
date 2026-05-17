@@ -50,7 +50,7 @@ export default function Services() {
             <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-20">
+                <div data-aos="fade-up" className="text-center max-w-3xl mx-auto mb-20">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
                         Apa yang Kami <span className="text-red-600">Kerjakan?</span>
                     </h2>
@@ -61,9 +61,11 @@ export default function Services() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {servicesData.map((service) => (
+                    {servicesData.map((service, i) => (
                         <div
                             key={service.id}
+                            data-aos="zoom-in-up"
+                            data-aos-delay={i * 100}
                             className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-red-200 hover:bg-white hover:shadow-2xl hover:shadow-red-500/5 hover:-translate-y-2 transition-all duration-300 group cursor-default"
                         >
                             <div className="w-16 h-16 bg-white border border-slate-200 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-600 group-hover:border-red-600 group-hover:text-white text-slate-700 transition-all duration-300 shadow-sm group-hover:shadow-md">

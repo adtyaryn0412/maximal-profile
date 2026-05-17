@@ -25,7 +25,7 @@ export default function AboutUs() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Header — sama dengan Services */}
-                <div className="text-center max-w-3xl mx-auto mb-20">
+                <div data-aos="fade-up" className="text-center max-w-3xl mx-auto mb-20">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
                         Tentang <span className="text-red-600">Kami</span>
                     </h2>
@@ -40,6 +40,8 @@ export default function AboutUs() {
                     {stats.map((stat, i) => (
                         <div
                             key={i}
+                            data-aos="fade-up"
+                            data-aos-delay={i * 100}
                             className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-red-200 hover:bg-white hover:shadow-2xl hover:shadow-red-500/5 hover:-translate-y-2 transition-all duration-300 text-center group cursor-default"
                         >
                             <p className="text-4xl md:text-5xl font-extrabold text-red-600 mb-2">
@@ -56,7 +58,7 @@ export default function AboutUs() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
                     {/* Kiri - Deskripsi */}
-                    <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-red-200 hover:bg-white hover:shadow-2xl hover:shadow-red-500/5 transition-all duration-300 space-y-6">
+                    <div data-aos="fade-right" className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-red-200 hover:bg-white hover:shadow-2xl hover:shadow-red-500/5 transition-all duration-300 space-y-6">
                         <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 leading-snug">
                             Mitra Terpercaya untuk{" "}
                             <span className="text-red-600">Konstruksi</span>{" "}
@@ -81,7 +83,7 @@ export default function AboutUs() {
                     </div>
 
                     {/* Kanan - Keunggulan */}
-                    <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-red-200 hover:bg-white hover:shadow-2xl hover:shadow-red-500/5 transition-all duration-300">
+                    <div data-aos="fade-left" className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-red-200 hover:bg-white hover:shadow-2xl hover:shadow-red-500/5 transition-all duration-300">
                         <h4 className="text-xl font-bold text-slate-900 mb-6 group-hover:text-red-600 transition-colors duration-300">
                             Mengapa Pilih Kami?
                         </h4>

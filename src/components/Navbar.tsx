@@ -7,10 +7,10 @@ import { NavItem } from '@/types';
 
 const navItems: NavItem[] = [
     { label: 'Beranda', href: '/' },
-    { label: 'Tentang', href: '#tentang' },
-    { label: 'Layanan', href: '#layanan' },
-    { label: 'Portofolio', href: '#portofolio' },
-    { label: 'Kontak', href: '#kontak' },
+    { label: 'Tentang', href: '/#tentang' },
+    { label: 'Layanan', href: '/#layanan' },
+    { label: 'Portofolio', href: '/#portofolio' },
+    { label: 'Kontak', href: '/#kontak' },
 ];
 
 export default function Navbar() {

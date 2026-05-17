@@ -3,8 +3,8 @@
 export default function AboutUs() {
     const stats = [
         { value: "100+", label: "Proyek Selesai" },
-        { value: "6+", label: "Tahun Pengalaman" },
-        { value: "6", label: "Kota Dilayani" },
+        { value: "7", label: "Tahun Pengalaman" },
+        { value: "10+", label: "Kota Dilayani" },
         { value: "100%", label: "Garansi Kualitas" },
     ];
 
@@ -65,10 +65,10 @@ export default function AboutUs() {
                             di Solo Raya
                         </h3>
                         <p className="text-slate-600 leading-relaxed text-sm">
-                            <strong className="text-slate-800">Maximal Construction</strong> adalah perusahaan jasa konstruksi dan fabrikasi logam yang berpusat di Solo, Jawa Tengah. Kami telah dipercaya oleh ratusan pelanggan — mulai dari perumahan pribadi, ruko, kantor, hingga gudang industri.
+                            <strong className="text-slate-800">Maximal Construction</strong> adalah perusahaan jasa konstruksi dan fabrikasi logam yang berpusat di Solo, Jawa Tengah. Kami telah dipercaya oleh ratusan pelanggan, mulai dari perumahan pribadi, ruko, kantor, hingga gudang industri.
                         </p>
                         <p className="text-slate-600 leading-relaxed text-sm">
-                            Spesialisasi kami mencakup pemasangan <strong className="text-slate-800">kanopi</strong>, pembuatan <strong className="text-slate-800">pagar & pintu gerbang</strong>, <strong className="text-slate-800">konstruksi baja</strong>, hingga <strong className="text-slate-800">renovasi bangunan</strong> — semua dikerjakan dengan standar kualitas tinggi.
+                            Spesialisasi kami mencakup pemasangan <strong className="text-slate-800">kanopi</strong>, pembuatan <strong className="text-slate-800">pagar & pintu gerbang</strong>, <strong className="text-slate-800">konstruksi baja</strong>, hingga <strong className="text-slate-800">renovasi bangunan</strong>. Semua dikerjakan dengan standar kualitas tinggi.
                         </p>
                         <a
                             href="https://wa.me/6281325255005?text=Halo%20Maximal%2C%20saya%20ingin%20konsultasi."

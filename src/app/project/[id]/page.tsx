@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import projectsData from '@/data/projects.json';
 import { notFound } from 'next/navigation';
+import { supabase } from '@/lib/supabaseClient';
+import ProjectGallery from '@/components/ProjectGallery';
 
 type Props = {
     params: Promise<{ id: string }>
@@ -9,7 +10,13 @@ type Props = {
 
 export async function generateMetadata({ params }: Props) {
     const { id } = await params;
-    const project = projectsData.find((p) => p.id === id);
+    
+    const { data: project } = await supabase
+        .from('projects')
+        .select('title, description')
+        .eq('id', id)
+        .single();
+
     if (!project) return { title: 'Proyek Tidak Ditemukan' };
 
     return {
@@ -20,37 +27,63 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function ProjectDetail({ params }: Props) {
     const { id } = await params;
-    const project = projectsData.find((p) => p.id === id);
+    
+    const { data: project, error } = await supabase
+        .from('projects')
+        .select('*')
+        .eq('id', id)
+        .single();
 
-    if (!project) {
+    if (error || !project) {
         notFound();
+    }
+
+    // --- PERBAIKAN GALERI ---
+    // Mencegah error jika tipe data di database bukan Array
+    let galleryImages: string[] = [];
+    if (project.gallery) {
+        if (Array.isArray(project.gallery)) {
+            galleryImages = project.gallery;
+        } else if (typeof project.gallery === 'string') {
+            // Jika user mengisi sebagai teks biasa, bersihkan karakter aneh dan pisahkan dengan koma
+            galleryImages = project.gallery
+                .replace(/[{}"'[\]]/g, '') // Hapus tanda kurung atau kutip jika ada
+                .split(/,|\n/) // Pisahkan dengan koma ATAU enter (jangan spasi, karena URL bisa mengandung spasi)
+                .map((url: string) => url.trim())
+                .filter((url: string) => url.length > 0);
+        }
     }
 
     return (
         <main className="bg-white min-h-screen pb-20">
 
-            <div className="relative h-[50vh] md:h-[60vh] w-full bg-neutral-900">
-                <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover opacity-50"
-                    priority
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
+            <div className="relative min-h-[400px] md:min-h-[500px] h-[50vh] md:h-[60vh] w-full bg-neutral-900">
+                {project.image_url && (
+                    <Image
+                        src={project.image_url}
+                        alt={project.title}
+                        fill
+                        className="object-cover opacity-50"
+                        priority
+                    />
+                )}
+                {/* Menambahkan pb-20 agar teks agak ke atas dan tidak tertabrak card yang naik (-mt-20) */}
+                <div className="absolute inset-0 flex items-center justify-center pb-20 md:pb-24">
                     <div className="text-center px-4 animate-fade-in-up">
                         <span className="inline-block px-3 py-1 bg-red-600 text-white text-xs font-bold tracking-widest uppercase rounded mb-4">
                             {project.category}
                         </span>
-                        <h1 className="text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg max-w-4xl leading-tight">
+                        {/* Menambahkan text-balance atau break-words agar teks panjang di layar kecil tidak meluber */}
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg max-w-4xl leading-tight text-balance">
                             {project.title}
                         </h1>
                     </div>
                 </div>
             </div>
 
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
-                <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-10 border border-neutral-100">
+            {/* Kontainer Card Detail - Naik ke atas dengan -mt-20 */}
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 md:-mt-32 relative z-10">
+                <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-10 lg:p-12 border border-neutral-100">
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
@@ -59,27 +92,14 @@ export default async function ProjectDetail({ params }: Props) {
                                 <h2 className="text-2xl font-bold text-neutral-900 border-b-2 border-red-600 inline-block pb-2 mb-6">
                                     Tentang Proyek
                                 </h2>
-                                <p className="text-neutral-600 leading-relaxed text-lg text-justify">
+                                <p className="text-neutral-600 leading-relaxed text-lg text-justify whitespace-pre-line">
                                     {project.description}
                                 </p>
                             </div>
 
-                            <div>
-                                <h3 className="text-xl font-bold text-neutral-900 mb-6">Galeri Dokumentasi</h3>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    {project.gallery?.map((img, index) => (
-                                        <div key={index} className="relative h-64 rounded-xl overflow-hidden group shadow-md hover:shadow-xl transition-shadow">
-                                            <Image
-                                                src={img}
-                                                alt={`Galeri ${index + 1}`}
-                                                fill
-                                                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                            />
-                                            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                            {galleryImages.length > 0 && (
+                                <ProjectGallery images={galleryImages} />
+                            )}
                         </div>
 
                         <div className="space-y-8">
@@ -92,11 +112,11 @@ export default async function ProjectDetail({ params }: Props) {
 
                                     <li className="border-b border-neutral-200 pb-3">
                                         <span className="text-xs text-neutral-500 uppercase tracking-wider block mb-1">Lokasi</span>
-                                        <span className="font-bold text-neutral-800 text-lg">{project.location || "Solo Raya"}</span>
+                                        <span className="font-bold text-neutral-800 text-lg">{project.location || "-"}</span>
                                     </li>
                                     <li className="border-b border-neutral-200 pb-3">
                                         <span className="text-xs text-neutral-500 uppercase tracking-wider block mb-1">Tahun</span>
-                                        <span className="font-bold text-neutral-800 text-lg">{project.year || "2024"}</span>
+                                        <span className="font-bold text-neutral-800 text-lg">{project.year || "-"}</span>
                                     </li>
                                     <li className="border-b border-neutral-200 pb-3">
                                         <span className="text-xs text-neutral-500 uppercase tracking-wider block mb-1">Kategori</span>
@@ -130,9 +150,7 @@ export default async function ProjectDetail({ params }: Props) {
                                 </Link>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </main>

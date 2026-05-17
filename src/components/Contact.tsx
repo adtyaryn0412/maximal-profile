@@ -54,8 +54,8 @@ export default function Contact() {
                             </div>
                             <div>
                                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Alamat Workshop</p>
-                                <p className="font-bold text-slate-800 group-hover:text-red-600 transition-colors text-sm">Solo, Jawa Tengah</p>
-                                <p className="text-xs text-slate-400 mt-0.5">Area layanan: Solo Raya & Grobogan</p>
+                                <p className="font-bold text-slate-800 group-hover:text-red-600 transition-colors text-sm">Dagen, Jaten, Karanganyar, Jawa Tengah</p>
+                                <p className="text-xs text-slate-400 mt-0.5">Area layanan: Solo Raya & Sekitarnya</p>
                             </div>
                         </a>
 
@@ -74,7 +74,7 @@ export default function Contact() {
                             <div>
                                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">WhatsApp / Telepon</p>
                                 <p className="font-bold text-slate-800 group-hover:text-red-600 transition-colors text-sm">+62 813-2525-5005</p>
-                                <p className="text-xs text-slate-400 mt-0.5">Senin – Sabtu, 08.00 – 17.00 WIB</p>
+                                <p className="text-xs text-slate-400 mt-0.5">Senin – Minggu, 08.00 – 17.00 WIB</p>
                             </div>
                         </a>
 
